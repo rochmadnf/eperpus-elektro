@@ -11,7 +11,7 @@
                     Perpustakaan Elektronik <br />Elektro</h1>
             </section>
 
-            <form class="space-y-8 pl-2" action="#" method="GET">
+            <form class="space-y-8 pl-2" action="{{ route('handle.search') }}" method="GET">
                 {{-- keyword --}}
                 <div class="group/search mb-5 space-y-2">
                     <h3 class="text-base font-medium uppercase">Akses perpustakaan
@@ -38,19 +38,23 @@
             {{-- statistic --}}
             <div class="grid w-full grid-cols-4 divide-x-2 divide-gray-900 pl-2">
                 <div class="flex flex-col justify-center space-y-1 pr-6">
-                    <h3 class="font-source-sans text-4xl font-bold">10</h3>
+                    <h3 class="font-source-sans text-4xl font-bold">{{ $files->where('file_category_id', '=', 1)->count() }}
+                    </h3>
                     <p class="text-xl font-medium uppercase">Buku</p>
                 </div>
                 <div class="flex flex-col justify-center space-y-1 px-6">
-                    <h3 class="font-source-sans text-4xl font-bold">25</h3>
+                    <h3 class="font-source-sans text-4xl font-bold">{{ $files->where('file_category_id', '=', 2)->count() }}
+                    </h3>
                     <p class="text-xl font-medium uppercase">Skripsi</p>
                 </div>
                 <div class="flex flex-col justify-center space-y-1 px-6">
-                    <h3 class="font-source-sans text-4xl font-bold">45</h3>
+                    <h3 class="font-source-sans text-4xl font-bold">{{ $files->where('file_category_id', '=', 3)->count() }}
+                    </h3>
                     <p class="text-xl font-medium uppercase">Laporan KP</p>
                 </div>
                 <div class="flex flex-col justify-center space-y-1 pl-6">
-                    <h3 class="font-source-sans text-4xl font-bold">30</h3>
+                    <h3 class="font-source-sans text-4xl font-bold">{{ $files->where('file_category_id', '=', 4)->count() }}
+                    </h3>
                     <p class="text-xl font-medium uppercase">Laporan Magang</p>
                 </div>
             </div>

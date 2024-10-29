@@ -13,6 +13,7 @@
         rel="stylesheet" />
 
     @vite(['resources/css/app.css'])
+    @yield('viteResource')
 </head>
 
 <body class="text-gray-900 antialiased">
